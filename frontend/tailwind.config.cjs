@@ -3,6 +3,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     "./node_modules/flowbite/**/*.js",
+    "./node_modules/flowbite-vue/**/*.js",
   ],
   safelist: [
     "w-64",

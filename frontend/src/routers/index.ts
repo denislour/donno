@@ -1,16 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Admin from "../layouts/Admin.vue";
+import AdminLayout from "../layouts/Admin.vue";
 import Home from "../views/Home.vue";
-import Product from "../views/Product.vue";
-import EditProduct from "../views/EditProduct.vue";
+import Product from "../views/products/Product.vue";
+import DefaultLayout from "../layouts/Default.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    component: Admin,
+    path: "/admin",
+    component: AdminLayout,
     children: [
       {
-        path: "/",
+        path: "/admin",
         component: Home,
         meta: {
           model: {
@@ -19,12 +19,18 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
-        path: "/product",
+        path: "/admin/product",
         component: Product,
       },
+    ],
+  },
+  {
+    path: "/",
+    component: DefaultLayout,
+    children: [
       {
-        path: "/product/:id",
-        component: EditProduct,
+        path: "/",
+        component: Home,
       },
     ],
   },

@@ -6,7 +6,7 @@ export const useBreadcrumbsStore = defineStore({
   state: () => ({
     breadcrumbs: {
       list: "",
-      detail: "",
+      link: "",
     } as BreadcrumbModel,
   }),
   actions: {
